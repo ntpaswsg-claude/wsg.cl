@@ -86,14 +86,29 @@
 
   /* ------------------------------------------------------
    * FAQ acordeón exclusivo (abrir uno cierra otros)
+   * Aunque <details>/<summary> son nativos accesibles,
+   * sincronizamos aria-expanded en el <summary> para que
+   * herramientas que no leen el atributo `open` del padre
+   * también reporten el estado correctamente.
    * ------------------------------------------------------ */
   const faqItems = document.querySelectorAll(".faq .faq__item");
+
+  function syncAria(item) {
+    const summary = item.querySelector("summary");
+    if (summary) {
+      summary.setAttribute("aria-expanded", item.open ? "true" : "false");
+    }
+  }
+
   faqItems.forEach(function (item) {
+    syncAria(item);
     item.addEventListener("toggle", function () {
+      syncAria(item);
       if (item.open) {
         faqItems.forEach(function (other) {
           if (other !== item && other.open) {
             other.open = false;
+            syncAria(other);
           }
         });
       }

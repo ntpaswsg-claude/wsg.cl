@@ -40,7 +40,10 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  const ctx = canvas.getContext("2d");
+  // Degradación: si el navegador no soporta canvas 2D, no hacemos nada más.
+  const ctx = canvas.getContext && canvas.getContext("2d");
+  if (!ctx) return;
+
   let width = 0;
   let height = 0;
   let dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -94,10 +97,11 @@
     }
   }
 
-  function step() {
+  // Renderiza un único frame (partículas + conexiones) sin programar el
+  // siguiente. Útil para mostrar algo estático cuando hay motion reducido.
+  function drawFrame() {
     ctx.clearRect(0, 0, width, height);
 
-    // Mover y dibujar partículas
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       p.x += p.vx;
@@ -113,7 +117,7 @@
       ctx.fill();
     }
 
-    // Dibujar conexiones cercanas
+    // Conexiones cercanas
     const maxDist = CONFIG.connectionDistance;
     const maxDistSq = maxDist * maxDist;
 
@@ -135,35 +139,56 @@
         }
       }
     }
+  }
 
-    animationId = requestAnimationFrame(step);
+  function loop() {
+    drawFrame();
+    animationId = requestAnimationFrame(loop);
+  }
+
+  function start() {
+    if (animationId) return;
+    if (prefersReducedMotion) {
+      // Un único frame estático, sin animación
+      drawFrame();
+      return;
+    }
+    loop();
+  }
+
+  function stop() {
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    }
   }
 
   // Inicialización
-  resize();
-
-  if (!prefersReducedMotion) {
-    step();
-  } else {
-    // Render estático para usuarios con motion reducido
-    step();
-    if (animationId) cancelAnimationFrame(animationId);
+  try {
+    resize();
+    start();
+  } catch (e) {
+    // Si algo falla (p. ej. canvas en estados raros), degradamos a fondo blanco
+    canvas.style.display = "none";
+    return;
   }
 
   // Reaccionar a cambios de tamaño con throttle
   let resizeTimer = null;
   window.addEventListener("resize", function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(resize, 150);
+    resizeTimer = setTimeout(function () {
+      resize();
+      if (prefersReducedMotion) drawFrame();
+    }, 150);
   });
 
   // Pausar cuando la pestaña no esté visible (ahorro de recursos)
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) {
-      if (animationId) cancelAnimationFrame(animationId);
-      animationId = null;
-    } else if (!prefersReducedMotion && !animationId) {
-      step();
+      stop();
+    } else {
+      start();
     }
   });
 })();

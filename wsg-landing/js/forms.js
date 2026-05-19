@@ -91,18 +91,18 @@
 
   /* ------------------------------------------------------
    * Submit (sin backend real)
+   * Para conectar a un backend real reemplazar el cuerpo
+   * de esta función por una llamada `fetch` al endpoint.
    * ------------------------------------------------------ */
+  // Log de depuración solo si se accede con ?debug=1 en la URL.
+  const DEBUG = /[?&]debug=1\b/.test(window.location.search);
+
   function submitForm(data) {
-    // Reemplazar este bloque por una llamada `fetch` real
-    // hacia el endpoint que se elija (Formspree, API propia, etc.)
     return new Promise(function (resolve) {
       setTimeout(function () {
-        // Log útil para depurar mientras se conecta el backend
-        // (Quitar en producción si se quiere.)
-        try {
-          console.info("[WSG.cl] cotización (sin backend):", data);
-        } catch (e) {
-          /* noop */
+        if (DEBUG) {
+          try { console.info("[WSG.cl] cotización (sin backend):", data); }
+          catch (e) { /* noop */ }
         }
         resolve({ ok: true });
       }, 700);
@@ -113,6 +113,26 @@
     feedback.className = "form__feedback";
     feedback.classList.add(type === "success" ? "is-success" : "is-error");
     feedback.textContent = message;
+  }
+
+  /* ------------------------------------------------------
+   * Toast de confirmación / error
+   * ------------------------------------------------------ */
+  const toastEl = document.getElementById("toast");
+  let toastTimer = null;
+
+  function showToast(type, message) {
+    if (!toastEl) return;
+    toastEl.className = "toast toast--" + (type === "success" ? "success" : "error");
+    toastEl.textContent = message;
+    // Forzar reflow para que la transición se dispare aun en envíos seguidos
+    void toastEl.offsetWidth;
+    toastEl.classList.add("is-visible");
+
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      toastEl.classList.remove("is-visible");
+    }, 4500);
   }
 
   /* ------------------------------------------------------
@@ -152,23 +172,23 @@
     submitForm(data)
       .then(function (res) {
         if (res && res.ok) {
-          showFeedback(
-            "success",
-            "¡Gracias! Recibimos tu solicitud. Te contactaremos en menos de 24 horas hábiles."
-          );
+          const successMsg =
+            "¡Gracias! Recibimos tu solicitud. Te contactaremos en menos de 24 horas hábiles.";
+          showFeedback("success", successMsg);
+          showToast("success", "Cotización enviada · te contactaremos pronto");
           form.reset();
         } else {
-          showFeedback(
-            "error",
-            "No pudimos enviar tu cotización. Inténtalo nuevamente o escríbenos a contacto@wsg.cl"
-          );
+          const errorMsg =
+            "No pudimos enviar tu cotización. Inténtalo nuevamente o escríbenos a contacto@wsg.cl";
+          showFeedback("error", errorMsg);
+          showToast("error", "No pudimos enviar tu cotización");
         }
       })
       .catch(function () {
-        showFeedback(
-          "error",
-          "No pudimos enviar tu cotización. Inténtalo nuevamente o escríbenos a contacto@wsg.cl"
-        );
+        const errorMsg =
+          "No pudimos enviar tu cotización. Inténtalo nuevamente o escríbenos a contacto@wsg.cl";
+        showFeedback("error", errorMsg);
+        showToast("error", "No pudimos enviar tu cotización");
       })
       .finally(function () {
         if (submitBtn) {

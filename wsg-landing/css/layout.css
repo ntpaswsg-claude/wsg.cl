@@ -154,9 +154,42 @@
   }
 }
 
-/* ---------- Espaciado fino en mobile ---------- */
+/* ---------- Ajuste fino en pantallas grandes (laptops) ---------- */
+@media (max-width: 1100px) {
+  .container {
+    padding: 0 var(--space-5);
+  }
+  .hero {
+    padding-top: calc(var(--header-height) + var(--space-8));
+  }
+}
+
+/* ---------- Espaciado fino en tablet/mobile ---------- */
 @media (max-width: 600px) {
   .section {
     padding: var(--space-8) 0;
+  }
+  .section__header {
+    margin-bottom: var(--space-6);
+  }
+}
+
+/* ---------- Fine-tuning para teléfonos pequeños (≤420px) ---------- */
+@media (max-width: 420px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+  .section {
+    padding: var(--space-7) 0;
+  }
+  .hero {
+    padding-top: calc(var(--header-height) + var(--space-6));
+    padding-bottom: var(--space-7);
+  }
+  .hero__visual {
+    min-height: 240px;
+  }
+  .hero__cta .btn {
+    flex: 1 1 100%;
   }
 }
