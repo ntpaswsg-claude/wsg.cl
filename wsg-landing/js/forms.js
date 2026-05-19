@@ -1,26 +1,40 @@
 /* =========================================================
  * forms.js
- * Validación y manejo del formulario de cotización de WSG.cl.
- * Como el sitio es estático, este script no envía datos a un
- * backend: valida los campos y muestra un mensaje de éxito
- * simulado. Para conectarlo a un servicio real (Formspree,
- * Google Forms, Apps Script, API propia, etc.) basta con
- * reemplazar el bloque `submitForm` por una llamada `fetch`.
+ * Validación y envío del formulario de cotización de WSG.cl.
+ *
+ * Modo de operación:
+ *  - Si FORM_ENDPOINT está vacío  → modo mock (simula envío).
+ *  - Si FORM_ENDPOINT tiene URL   → envío real vía fetch POST
+ *    al endpoint de Google Apps Script (JSON).
+ *
+ * En ningún caso recarga la página: siempre maneja submit
+ * con event.preventDefault() y muestra el resultado en un
+ * toast + feedback inline.
  * ========================================================= */
 
 (function () {
   "use strict";
 
+  // ┌─────────────────────────────────────────────────────────────────┐
+  // │  CONFIGURACIÓN — pega aquí la URL de tu Google Apps Script      │
+  // │  Ejemplo: https://script.google.com/macros/s/XXXXX/exec         │
+  // └─────────────────────────────────────────────────────────────────┘
+  const FORM_ENDPOINT = "";
+
+  /* ------------------------------------------------------
+   * Referencias DOM
+   * ------------------------------------------------------ */
   const form = document.getElementById("quote-form");
   const feedback = document.getElementById("form-feedback");
+  const toastEl = document.getElementById("toast");
   if (!form || !feedback) return;
 
+  /* ------------------------------------------------------
+   * Validación
+   * ------------------------------------------------------ */
   const EMAIL_RX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const PHONE_RX = /^[+\d\s().-]{6,}$/;
 
-  /* ------------------------------------------------------
-   * Helpers de error por campo
-   * ------------------------------------------------------ */
   function setError(name, message) {
     const field = form.querySelector('[name="' + name + '"]');
     const errorEl = form.querySelector('[data-error-for="' + name + '"]');
@@ -39,20 +53,24 @@
     if (errorEl) errorEl.textContent = "";
   }
 
+  const ALL_FIELDS = [
+    "nombre",
+    "empresa",
+    "correo",
+    "whatsapp",
+    "sitio_web_instagram",
+    "plataforma_venta",
+    "cantidad_sku",
+    "pedidos_mensuales",
+    "tipo_productos",
+    "necesidad_logistica",
+    "privacidad",
+  ];
+
   function clearAllErrors() {
-    [
-      "nombre",
-      "empresa",
-      "email",
-      "telefono",
-      "volumen",
-      "privacidad",
-    ].forEach(clearError);
+    ALL_FIELDS.forEach(clearError);
   }
 
-  /* ------------------------------------------------------
-   * Validación
-   * ------------------------------------------------------ */
   function validate(data) {
     let ok = true;
 
@@ -60,83 +78,124 @@
       setError("nombre", "Ingresa tu nombre.");
       ok = false;
     }
-
     if (!data.empresa || data.empresa.trim().length < 2) {
       setError("empresa", "Ingresa el nombre de tu empresa.");
       ok = false;
     }
-
-    if (!data.email || !EMAIL_RX.test(data.email.trim())) {
-      setError("email", "Ingresa un email válido.");
+    if (!data.correo || !EMAIL_RX.test(data.correo.trim())) {
+      setError("correo", "Ingresa un correo válido.");
       ok = false;
     }
-
-    if (data.telefono && !PHONE_RX.test(data.telefono.trim())) {
-      setError("telefono", "Ingresa un teléfono válido.");
+    if (!data.whatsapp || !PHONE_RX.test(data.whatsapp.trim())) {
+      setError("whatsapp", "Ingresa un WhatsApp de contacto.");
       ok = false;
     }
-
-    if (!data.volumen) {
-      setError("volumen", "Selecciona un volumen estimado.");
+    if (!data.pedidos_mensuales) {
+      setError("pedidos_mensuales", "Selecciona un rango de pedidos.");
       ok = false;
     }
-
     if (!data.privacidad) {
       setError("privacidad", "Debes aceptar para poder contactarte.");
       ok = false;
     }
-
     return ok;
   }
 
   /* ------------------------------------------------------
-   * Submit (sin backend real)
-   * Para conectar a un backend real reemplazar el cuerpo
-   * de esta función por una llamada `fetch` al endpoint.
+   * Construcción del payload (campos exactos esperados
+   * por el script de Google Apps Script)
    * ------------------------------------------------------ */
-  // Log de depuración solo si se accede con ?debug=1 en la URL.
-  const DEBUG = /[?&]debug=1\b/.test(window.location.search);
-
-  function submitForm(data) {
-    return new Promise(function (resolve) {
-      setTimeout(function () {
-        if (DEBUG) {
-          try { console.info("[WSG.cl] cotización (sin backend):", data); }
-          catch (e) { /* noop */ }
-        }
-        resolve({ ok: true });
-      }, 700);
-    });
+  function buildPayload() {
+    return {
+      nombre: (form.nombre && form.nombre.value || "").trim(),
+      empresa: (form.empresa && form.empresa.value || "").trim(),
+      correo: (form.correo && form.correo.value || "").trim(),
+      whatsapp: (form.whatsapp && form.whatsapp.value || "").trim(),
+      sitio_web_instagram: (form.sitio_web_instagram && form.sitio_web_instagram.value || "").trim(),
+      plataforma_venta: (form.plataforma_venta && form.plataforma_venta.value || "").trim(),
+      cantidad_sku: (form.cantidad_sku && form.cantidad_sku.value || "").trim(),
+      pedidos_mensuales: (form.pedidos_mensuales && form.pedidos_mensuales.value || "").trim(),
+      tipo_productos: (form.tipo_productos && form.tipo_productos.value || "").trim(),
+      necesidad_logistica: (form.necesidad_logistica && form.necesidad_logistica.value || "").trim(),
+      fecha_envio: new Date().toISOString(),
+      origen_formulario: "wsg-landing",
+      pagina: window.location.href,
+    };
   }
 
+  /* ------------------------------------------------------
+   * Envío: real (fetch) o mock según FORM_ENDPOINT
+   * ------------------------------------------------------ */
+  function submitForm(payload) {
+    if (!FORM_ENDPOINT) {
+      // Modo mock: simula latencia y resuelve OK
+      return new Promise(function (resolve) {
+        setTimeout(function () {
+          resolve({ ok: true, mock: true });
+        }, 700);
+      });
+    }
+
+    // Modo real: POST JSON al endpoint de Google Apps Script
+    return fetch(FORM_ENDPOINT, {
+      method: "POST",
+      // GAS web apps no aceptan preflight CORS personalizado: con
+      // text/plain el navegador no dispara OPTIONS y GAS recibe el
+      // body completo en e.postData.contents.
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+      redirect: "follow",
+    })
+      .then(function (res) {
+        return { ok: res.ok, mock: false, status: res.status };
+      })
+      .catch(function () {
+        return { ok: false, mock: false, error: true };
+      });
+  }
+
+  /* ------------------------------------------------------
+   * UI: feedback inline + toast
+   * ------------------------------------------------------ */
   function showFeedback(type, message) {
     feedback.className = "form__feedback";
     feedback.classList.add(type === "success" ? "is-success" : "is-error");
     feedback.textContent = message;
   }
 
-  /* ------------------------------------------------------
-   * Toast de confirmación / error
-   * ------------------------------------------------------ */
-  const toastEl = document.getElementById("toast");
   let toastTimer = null;
-
   function showToast(type, message) {
     if (!toastEl) return;
     toastEl.className = "toast toast--" + (type === "success" ? "success" : "error");
     toastEl.textContent = message;
-    // Forzar reflow para que la transición se dispare aun en envíos seguidos
+    // Reflow para reiniciar transición si el toast ya estaba visible
     void toastEl.offsetWidth;
     toastEl.classList.add("is-visible");
 
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(function () {
       toastEl.classList.remove("is-visible");
-    }, 4500);
+    }, 5000);
   }
 
   /* ------------------------------------------------------
-   * Listeners
+   * Mensajes (centralizados para mantenibilidad)
+   * ------------------------------------------------------ */
+  const MSG = {
+    mockToast:
+      "Formulario recibido (modo prueba). Configura FORM_ENDPOINT para activar el envío real.",
+    successToast: "Solicitud recibida. El equipo de WSG te contactará pronto.",
+    errorToast:
+      "Hubo un problema al enviar. Por favor intenta de nuevo o escríbenos por WhatsApp.",
+    inlineSuccess:
+      "¡Gracias! Recibimos tu solicitud. Te contactaremos en menos de 24 horas hábiles.",
+    inlineError:
+      "No pudimos enviar tu cotización. Inténtalo nuevamente o escríbenos por WhatsApp.",
+    inlineValidation: "Revisa los campos marcados antes de enviar.",
+  };
+
+  /* ------------------------------------------------------
+   * Submit listener (nunca recarga la página)
    * ------------------------------------------------------ */
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -144,21 +203,15 @@
     feedback.className = "form__feedback";
     feedback.textContent = "";
 
-    const data = {
-      nombre: form.nombre.value,
-      empresa: form.empresa.value,
-      email: form.email.value,
-      telefono: form.telefono.value,
-      volumen: form.volumen.value,
-      mensaje: form.mensaje.value,
-      privacidad: form.privacidad.checked,
-    };
+    const payload = buildPayload();
+    // El payload reusa los nombres exactos esperados por el backend;
+    // la validación trabaja sobre el mismo objeto.
+    const data = Object.assign({}, payload, {
+      privacidad: form.privacidad ? form.privacidad.checked : false,
+    });
 
     if (!validate(data)) {
-      showFeedback(
-        "error",
-        "Revisa los campos marcados antes de enviar."
-      );
+      showFeedback("error", MSG.inlineValidation);
       return;
     }
 
@@ -169,26 +222,25 @@
       submitBtn.textContent = "Enviando...";
     }
 
-    submitForm(data)
+    submitForm(payload)
       .then(function (res) {
         if (res && res.ok) {
-          const successMsg =
-            "¡Gracias! Recibimos tu solicitud. Te contactaremos en menos de 24 horas hábiles.";
-          showFeedback("success", successMsg);
-          showToast("success", "Cotización enviada · te contactaremos pronto");
+          if (res.mock) {
+            showFeedback("success", MSG.inlineSuccess);
+            showToast("success", MSG.mockToast);
+          } else {
+            showFeedback("success", MSG.inlineSuccess);
+            showToast("success", MSG.successToast);
+          }
           form.reset();
         } else {
-          const errorMsg =
-            "No pudimos enviar tu cotización. Inténtalo nuevamente o escríbenos a contacto@wsg.cl";
-          showFeedback("error", errorMsg);
-          showToast("error", "No pudimos enviar tu cotización");
+          showFeedback("error", MSG.inlineError);
+          showToast("error", MSG.errorToast);
         }
       })
       .catch(function () {
-        const errorMsg =
-          "No pudimos enviar tu cotización. Inténtalo nuevamente o escríbenos a contacto@wsg.cl";
-        showFeedback("error", errorMsg);
-        showToast("error", "No pudimos enviar tu cotización");
+        showFeedback("error", MSG.inlineError);
+        showToast("error", MSG.errorToast);
       })
       .finally(function () {
         if (submitBtn) {
@@ -198,17 +250,13 @@
       });
   });
 
-  // Limpiar error al volver a tocar el campo
-  ["nombre", "empresa", "email", "telefono", "volumen", "privacidad"].forEach(
-    function (name) {
-      const field = form.querySelector('[name="' + name + '"]');
-      if (!field) return;
-      field.addEventListener("input", function () {
-        clearError(name);
-      });
-      field.addEventListener("change", function () {
-        clearError(name);
-      });
-    }
-  );
+  /* ------------------------------------------------------
+   * Limpiar errores al volver a tocar un campo
+   * ------------------------------------------------------ */
+  ALL_FIELDS.forEach(function (name) {
+    const field = form.querySelector('[name="' + name + '"]');
+    if (!field) return;
+    field.addEventListener("input", function () { clearError(name); });
+    field.addEventListener("change", function () { clearError(name); });
+  });
 })();

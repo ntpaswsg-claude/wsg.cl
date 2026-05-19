@@ -673,20 +673,59 @@
 
           <div class="form__row">
             <div class="form__field">
-              <label for="f-email">Email *</label>
-              <input id="f-email" name="email" type="email" required autocomplete="email" />
-              <small class="form__error" data-error-for="email"></small>
+              <label for="f-correo">Correo *</label>
+              <input id="f-correo" name="correo" type="email" required autocomplete="email" />
+              <small class="form__error" data-error-for="correo"></small>
             </div>
             <div class="form__field">
-              <label for="f-telefono">Teléfono</label>
-              <input id="f-telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9 ..." />
-              <small class="form__error" data-error-for="telefono"></small>
+              <label for="f-whatsapp">WhatsApp *</label>
+              <input id="f-whatsapp" name="whatsapp" type="tel" required autocomplete="tel" placeholder="+56 9 ..." />
+              <small class="form__error" data-error-for="whatsapp"></small>
             </div>
           </div>
 
           <div class="form__field">
-            <label for="f-volumen">Volumen mensual estimado *</label>
-            <select id="f-volumen" name="volumen" required>
+            <label for="f-sitio">Sitio web o Instagram</label>
+            <input id="f-sitio" name="sitio_web_instagram" type="text" autocomplete="url" placeholder="https://misitio.cl o @miinstagram" />
+            <small class="form__error" data-error-for="sitio_web_instagram"></small>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-plataforma">Plataforma de venta</label>
+              <select id="f-plataforma" name="plataforma_venta">
+                <option value="">Selecciona una opción</option>
+                <option value="shopify">Shopify</option>
+                <option value="woocommerce">WooCommerce</option>
+                <option value="jumpseller">Jumpseller</option>
+                <option value="tiendanube">TiendaNube</option>
+                <option value="mercadolibre">Mercado Libre</option>
+                <option value="falabella">Falabella</option>
+                <option value="magento">Magento</option>
+                <option value="prestashop">PrestaShop</option>
+                <option value="multiple">Más de una plataforma</option>
+                <option value="ninguna">Aún no vendo online</option>
+                <option value="otra">Otra</option>
+              </select>
+              <small class="form__error" data-error-for="plataforma_venta"></small>
+            </div>
+            <div class="form__field">
+              <label for="f-sku">Cantidad aproximada de SKU</label>
+              <select id="f-sku" name="cantidad_sku">
+                <option value="">Selecciona un rango</option>
+                <option value="1-10">1 a 10 SKU</option>
+                <option value="10-50">10 a 50 SKU</option>
+                <option value="50-200">50 a 200 SKU</option>
+                <option value="200-500">200 a 500 SKU</option>
+                <option value="500+">Más de 500 SKU</option>
+              </select>
+              <small class="form__error" data-error-for="cantidad_sku"></small>
+            </div>
+          </div>
+
+          <div class="form__field">
+            <label for="f-pedidos">Pedidos mensuales estimados *</label>
+            <select id="f-pedidos" name="pedidos_mensuales" required>
               <option value="">Selecciona un rango</option>
               <option value="0-100">Hasta 100 pedidos / mes</option>
               <option value="100-500">100 a 500 pedidos / mes</option>
@@ -695,12 +734,19 @@
               <option value="5000+">Más de 5.000 pedidos / mes</option>
               <option value="solo-almacenamiento">Solo almacenamiento</option>
             </select>
-            <small class="form__error" data-error-for="volumen"></small>
+            <small class="form__error" data-error-for="pedidos_mensuales"></small>
           </div>
 
           <div class="form__field">
-            <label for="f-mensaje">Cuéntanos más sobre tu operación</label>
-            <textarea id="f-mensaje" name="mensaje" rows="5" placeholder="Producto, canales de venta, temporada, integraciones, etc."></textarea>
+            <label for="f-tipo">Tipo de productos</label>
+            <input id="f-tipo" name="tipo_productos" type="text" placeholder="Ej: ropa, accesorios, suplementos, electrónica…" />
+            <small class="form__error" data-error-for="tipo_productos"></small>
+          </div>
+
+          <div class="form__field">
+            <label for="f-necesidad">Cuéntanos qué necesitas</label>
+            <textarea id="f-necesidad" name="necesidad_logistica" rows="5" placeholder="Operación actual, dolores, temporada, integraciones, etc."></textarea>
+            <small class="form__error" data-error-for="necesidad_logistica"></small>
           </div>
 
           <div class="form__field form__field--check">
@@ -730,8 +776,9 @@
           <span class="nav__logo-mark">W</span>
           <span class="nav__logo-text">WSG<span class="nav__logo-dot">.cl</span></span>
         </div>
+        <p class="footer__slogan">Logística para crecer.</p>
         <p class="footer__tagline">
-          Logística y fulfillment para ecommerce y marcas en Chile.
+          Tu partner logístico integral para ecommerce y marcas en Chile.
         </p>
       </div>
 
@@ -760,8 +807,15 @@
       <div class="footer__col">
         <h4>Contacto</h4>
         <ul>
+          <!-- Email oficial (placeholder hasta confirmar dirección final) -->
           <li><a href="mailto:contacto@wsg.cl">contacto@wsg.cl</a></li>
-          <li><a href="tel:+56000000000">+56 9 0000 0000</a></li>
+          <!-- WhatsApp PLACEHOLDER: reemplazar "56999999999" en el href y el texto visible
+               por el número real cuando se confirme. Formato wa.me requiere prefijo país sin "+". -->
+          <li>
+            <a href="https://wa.me/56999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp WSG.cl (pendiente confirmación)">
+              WhatsApp: +56 9 XXXX XXXX
+            </a>
+          </li>
           <li>Santiago, Chile</li>
         </ul>
       </div>
