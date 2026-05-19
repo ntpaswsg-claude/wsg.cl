@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f2444" />
+  <meta name="description" content="WSG.cl: logística, fulfillment, almacenamiento, picking, packing y despacho para ecommerce y marcas en Chile. Espacio flexible con IZI Storage." />
+  <meta name="keywords" content="logística, fulfillment, almacenamiento, picking, packing, despacho, ecommerce, Chile, IZI Storage, WSG" />
+
+  <title>WSG.cl · Logística y fulfillment para ecommerce y marcas</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- Barra de progreso de scroll -->
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Fondo visual animado -->
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navegación -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo" aria-label="WSG.cl inicio">
+        <span class="nav__logo-mark">W</span>
+        <span class="nav__logo-text">WSG<span class="nav__logo-dot">.cl</span></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#izi-storage">IZI Storage</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cotizar" class="btn btn--primary btn--sm">Cotizar</a>
+      </nav>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <span class="eyebrow">Logística + Fulfillment</span>
+          <h1 class="hero__title">
+            Tu operación logística, <span class="text-accent">resuelta</span>.
+            Tú te enfocas en vender.
+          </h1>
+          <p class="hero__subtitle">
+            WSG.cl gestiona el almacenamiento, picking, packing y despacho de tus pedidos
+            con tecnología, flexibilidad y un equipo dedicado. Operación logística integral
+            para ecommerce, marcas e importadores en Chile.
+          </p>
+          <div class="hero__cta">
+            <a href="#cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            <a href="#servicios" class="btn btn--ghost btn--lg">Ver servicios</a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="hero__card hero__card--1">
+            <div class="hero__card-label">Pedidos hoy</div>
+            <div class="hero__card-bars">
+              <span class="hero__bar hero__bar--40"></span>
+              <span class="hero__bar hero__bar--65"></span>
+              <span class="hero__bar hero__bar--50"></span>
+              <span class="hero__bar hero__bar--80"></span>
+              <span class="hero__bar hero__bar--70"></span>
+              <span class="hero__bar hero__bar--90"></span>
+              <span class="hero__bar hero__bar--60"></span>
+            </div>
+          </div>
+          <div class="hero__card hero__card--2">
+            <div class="hero__card-dot"></div>
+            <div>
+              <div class="hero__card-title">Despacho en ruta</div>
+              <div class="hero__card-sub">Integrado a tu tienda</div>
+            </div>
+          </div>
+          <div class="hero__card hero__card--3">
+            <div class="hero__card-title">IZI Storage</div>
+            <div class="hero__card-sub">Espacio flexible bajo demanda</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust">
+      <div class="container">
+        <ul class="trust__list">
+          <li class="trust__item reveal">
+            <span class="trust__icon" aria-hidden="true">✓</span>
+            <span>Sin contratos forzados</span>
+          </li>
+          <li class="trust__item reveal">
+            <span class="trust__icon" aria-hidden="true">⚡</span>
+            <span>Respuesta en 24 horas</span>
+          </li>
+          <li class="trust__item reveal">
+            <span class="trust__icon" aria-hidden="true">⇄</span>
+            <span>Integración con tu ecommerce</span>
+          </li>
+          <li class="trust__item reveal">
+            <span class="trust__icon" aria-hidden="true">⤢</span>
+            <span>Espacio flexible (IZI Storage)</span>
+          </li>
+          <li class="trust__item reveal">
+            <span class="trust__icon" aria-hidden="true">★</span>
+            <span>Equipo dedicado por cliente</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DOLORES -->
+    <section class="section" id="dolores">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="eyebrow">Lo que probablemente estás viviendo</span>
+          <h2 class="section__title">La logística te frena cuando deberías estar creciendo</h2>
+          <p class="section__lead">
+            Si vendes online o manejas inventario, estos dolores se vuelven cuello de botella
+            antes de lo que parece.
+          </p>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="pain reveal">
+            <div class="pain__icon">⏳</div>
+            <h3>Pierdes horas armando pedidos</h3>
+            <p>Tiempo que debería ir a marketing, producto y ventas se va en empaquetar y coordinar despachos.</p>
+          </article>
+          <article class="pain reveal">
+            <div class="pain__icon">📦</div>
+            <h3>Tu bodega ya no alcanza</h3>
+            <p>Crecer significa pagar más arriendo, más estanterías y más personal antes de poder facturarlo.</p>
+          </article>
+          <article class="pain reveal">
+            <div class="pain__icon">⚠️</div>
+            <h3>Errores de despacho dañan tu marca</h3>
+            <p>Un pedido equivocado o un atraso se transforma en reseñas negativas y reembolsos.</p>
+          </article>
+          <article class="pain reveal">
+            <div class="pain__icon">💸</div>
+            <h3>Costos fijos que no escalan</h3>
+            <p>En temporada baja pagas igual. En temporada alta colapsas. La operación interna no se adapta.</p>
+          </article>
+          <article class="pain reveal">
+            <div class="pain__icon">📞</div>
+            <h3>Atención saturada por logística</h3>
+            <p>“¿Dónde está mi pedido?” se convierte en la pregunta más frecuente de tu soporte.</p>
+          </article>
+          <article class="pain reveal">
+            <div class="pain__icon">🔌</div>
+            <h3>Sistemas que no conversan</h3>
+            <p>Tu tienda, tu inventario y tu courier viven en mundos separados. Todo se gestiona a mano.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUCIÓN -->
+    <section class="section section--alt" id="solucion">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="eyebrow">La propuesta WSG.cl</span>
+          <h2 class="section__title">Una operación logística completa, sin que tengas que montarla</h2>
+          <p class="section__lead">
+            WSG.cl es tu equipo logístico externo: bodega, personal, tecnología y procesos.
+            Tú pones los productos y los canales de venta, nosotros movemos cada pedido.
+          </p>
+        </header>
+
+        <div class="grid grid--4">
+          <div class="feature reveal">
+            <div class="feature__num">01</div>
+            <h3>Operación integral</h3>
+            <p>Recepción, almacenamiento, picking, packing y despacho bajo un solo proveedor.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature__num">02</div>
+            <h3>Tecnología conectada</h3>
+            <p>Integración con tu tienda, marketplaces y couriers. Stock y pedidos sincronizados.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature__num">03</div>
+            <h3>Equipo dedicado</h3>
+            <p>Una contraparte humana que conoce tu marca, tus productos y tus reglas de despacho.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature__num">04</div>
+            <h3>Pagas por lo que usas</h3>
+            <p>Modelo flexible. Tu logística se adapta a tu temporada, no al revés.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="eyebrow">Servicios</span>
+          <h2 class="section__title">Lo que hacemos por ti</h2>
+          <p class="section__lead">
+            Cuatro pilares que cubren tu cadena logística completa, desde que el producto
+            llega a la bodega hasta que lo recibe tu cliente final.
+          </p>
+        </header>
+
+        <div class="grid grid--2">
+          <article class="service reveal">
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v12H3z"/><path d="M9 21V12h6v9"/></svg>
+            </div>
+            <h3>Almacenamiento</h3>
+            <p>Bodega organizada, segura y trazada. Recibimos, inventariamos y resguardamos tu mercancía con control de stock al detalle.</p>
+            <ul class="service__bullets">
+              <li>Recepción y control de calidad</li>
+              <li>Ubicaciones trazadas</li>
+              <li>Inventario actualizado</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l5 5v5H3z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            </div>
+            <h3>Picking &amp; Packing</h3>
+            <p>Armado preciso de cada pedido con materiales adecuados y la presentación que tu marca necesita.</p>
+            <ul class="service__bullets">
+              <li>Picking unitario o por lotes</li>
+              <li>Packing con tu identidad de marca</li>
+              <li>Verificación antes del despacho</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+            </div>
+            <h3>Despacho nacional</h3>
+            <p>Coordinación con los principales couriers. Etiquetado, manifiesto y entrega de la última milla gestionados por nosotros.</p>
+            <ul class="service__bullets">
+              <li>Multi-courier</li>
+              <li>Tracking unificado</li>
+              <li>Cobertura nacional</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg>
+            </div>
+            <h3>Fulfillment ecommerce</h3>
+            <p>Operación end-to-end conectada a tu tienda o marketplace. El pedido entra solo, sale como debe ser.</p>
+            <ul class="service__bullets">
+              <li>Integración con plataformas</li>
+              <li>Procesamiento automático</li>
+              <li>Reportes claros</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- IZI STORAGE -->
+    <section class="section izi" id="izi-storage">
+      <div class="container izi__inner">
+        <div class="izi__content reveal">
+          <span class="eyebrow eyebrow--light">Diferenciador WSG.cl</span>
+          <h2 class="section__title section__title--light">IZI Storage: espacio flexible bajo demanda</h2>
+          <p class="section__lead section__lead--light">
+            IZI Storage es nuestra solución de almacenamiento flexible: pagas por el espacio
+            que realmente usas y lo escalas cuando lo necesitas. Sin arriendos largos,
+            sin sobrepagar metros vacíos.
+          </p>
+          <ul class="izi__list">
+            <li><strong>Sin contratos rígidos.</strong> Aumenta o reduce según tu demanda.</li>
+            <li><strong>Escalable por temporada.</strong> Cyber, fiestas y campañas sin colapsar.</li>
+            <li><strong>Ideal para importadores.</strong> Llega tu contenedor, lo guardamos y lo movilizamos.</li>
+            <li><strong>Listo para integrarse</strong> con todos los servicios de fulfillment de WSG.cl.</li>
+          </ul>
+          <a href="#cotizar" class="btn btn--accent btn--lg">Cotizar IZI Storage</a>
+        </div>
+
+        <div class="izi__visual reveal" aria-hidden="true">
+          <div class="izi__grid">
+            <div class="izi__cell"></div>
+            <div class="izi__cell izi__cell--active"></div>
+            <div class="izi__cell"></div>
+            <div class="izi__cell izi__cell--active"></div>
+            <div class="izi__cell izi__cell--active"></div>
+            <div class="izi__cell"></div>
+            <div class="izi__cell"></div>
+            <div class="izi__cell izi__cell--active"></div>
+            <div class="izi__cell izi__cell--active"></div>
+            <div class="izi__cell izi__cell--active"></div>
+            <div class="izi__cell"></div>
+            <div class="izi__cell izi__cell--active"></div>
+          </div>
+          <div class="izi__visual-label">Espacio activo · escalable</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARACIÓN -->
+    <section class="section section--alt" id="comparacion">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="eyebrow">Operación interna vs WSG.cl</span>
+          <h2 class="section__title">Hacerlo solo no siempre sale más barato</h2>
+          <p class="section__lead">
+            Cuando sumas bodega, personal, software y tiempo de gestión, externalizar suele ser
+            más rentable y más rápido de poner en marcha.
+          </p>
+        </header>
+
+        <div class="compare reveal">
+          <div class="compare__row compare__row--head">
+            <div class="compare__cell compare__cell--label">Aspecto</div>
+            <div class="compare__cell">Operación interna</div>
+            <div class="compare__cell compare__cell--wsg">Con WSG.cl</div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Inversión inicial</div>
+            <div class="compare__cell">Alta (bodega, estanterías, equipos)</div>
+            <div class="compare__cell compare__cell--wsg">Sin inversión en infraestructura</div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Personal logístico</div>
+            <div class="compare__cell">Contratación y gestión propia</div>
+            <div class="compare__cell compare__cell--wsg">Equipo incluido en el servicio</div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Tecnología (WMS)</div>
+            <div class="compare__cell">Comprar o desarrollar</div>
+            <div class="compare__cell compare__cell--wsg">Incluida e integrada</div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Escalabilidad</div>
+            <div class="compare__cell">Limitada por tu bodega y staff</div>
+            <div class="compare__cell compare__cell--wsg">Flexible con IZI Storage</div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Errores y devoluciones</div>
+            <div class="compare__cell">Tu responsabilidad operativa</div>
+            <div class="compare__cell compare__cell--wsg">Gestionados con proceso definido</div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Foco del negocio</div>
+            <div class="compare__cell">Disperso entre operación y ventas</div>
+            <div class="compare__cell compare__cell--wsg">Centrado en crecer la marca</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COSTOS OCULTOS -->
+    <section class="section" id="costos">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="eyebrow">Costos ocultos</span>
+          <h2 class="section__title">Lo que realmente cuesta operar tu propia logística</h2>
+          <p class="section__lead">
+            Muchas marcas calculan solo el arriendo de la bodega. La operación real tiene
+            muchas más líneas, y todas suman al mes.
+          </p>
+        </header>
+
+        <div class="grid grid--3">
+          <div class="cost reveal">
+            <div class="cost__bullet"></div>
+            <h3>Arriendo y servicios</h3>
+            <p>Bodega, luz, internet, seguridad y mantención mensual.</p>
+          </div>
+          <div class="cost reveal">
+            <div class="cost__bullet"></div>
+            <h3>Equipo logístico</h3>
+            <p>Sueldos, leyes sociales, capacitación y rotación de personal.</p>
+          </div>
+          <div class="cost reveal">
+            <div class="cost__bullet"></div>
+            <h3>Software WMS</h3>
+            <p>Licencias, integraciones y soporte técnico recurrente.</p>
+          </div>
+          <div class="cost reveal">
+            <div class="cost__bullet"></div>
+            <h3>Materiales de embalaje</h3>
+            <p>Cajas, cintas, etiquetas, relleno y consumibles del packing.</p>
+          </div>
+          <div class="cost reveal">
+            <div class="cost__bullet"></div>
+            <h3>Mermas y errores</h3>
+            <p>Pedidos equivocados, reembolsos y reposición por daños.</p>
+          </div>
+          <div class="cost reveal">
+            <div class="cost__bullet"></div>
+            <h3>Tu propio tiempo</h3>
+            <p>Horas que dejas de invertir en producto, marketing y ventas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN -->
+    <section class="section section--alt" id="para-quien">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="eyebrow">Cliente ideal</span>
+          <h2 class="section__title">¿Para quién está pensado WSG.cl?</h2>
+          <p class="section__lead">
+            Trabajamos especialmente bien con marcas que ya venden, quieren escalar
+            y prefieren delegar la operación.
+          </p>
+        </header>
+
+        <div class="grid grid--3">
+          <div class="audience reveal">
+            <div class="audience__icon">🛍️</div>
+            <h3>Marcas D2C y ecommerce</h3>
+            <p>Marcas propias que venden online y quieren mejorar la experiencia post-compra.</p>
+          </div>
+          <div class="audience reveal">
+            <div class="audience__icon">🏷️</div>
+            <h3>Tiendas Shopify / WooCommerce</h3>
+            <p>Negocios que necesitan integración real con su plataforma y despacho consistente.</p>
+          </div>
+          <div class="audience reveal">
+            <div class="audience__icon">🛒</div>
+            <h3>Vendedores en marketplaces</h3>
+            <p>Sellers de Mercado Libre, Falabella y similares que buscan operación profesional.</p>
+          </div>
+          <div class="audience reveal">
+            <div class="audience__icon">📥</div>
+            <h3>Importadores</h3>
+            <p>Empresas que reciben contenedores y necesitan almacenar, ordenar y distribuir.</p>
+          </div>
+          <div class="audience reveal">
+            <div class="audience__icon">📈</div>
+            <h3>Marcas en crecimiento</h3>
+            <p>Negocios que crecen rápido y necesitan operación que escale con ellos.</p>
+          </div>
+          <div class="audience reveal">
+            <div class="audience__icon">🎯</div>
+            <h3>Equipos enfocados</h3>
+            <p>Fundadores y equipos pequeños que prefieren delegar la logística para enfocarse en vender.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="section" id="proceso">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="eyebrow">Cómo trabajamos</span>
+          <h2 class="section__title">Empezar con WSG.cl en 5 pasos</h2>
+          <p class="section__lead">
+            Un proceso claro y acotado para que pases de operar internamente a operar con
+            nosotros sin fricción.
+          </p>
+        </header>
+
+        <ol class="steps">
+          <li class="steps__item reveal">
+            <div class="steps__num">1</div>
+            <h3>Conversación inicial</h3>
+            <p>Entendemos tu producto, volumen y canales de venta.</p>
+          </li>
+          <li class="steps__item reveal">
+            <div class="steps__num">2</div>
+            <h3>Diagnóstico y propuesta</h3>
+            <p>Te enviamos una propuesta clara, ajustada a tu operación real.</p>
+          </li>
+          <li class="steps__item reveal">
+            <div class="steps__num">3</div>
+            <h3>Recepción de inventario</h3>
+            <p>Coordinamos la llegada de tus productos y los ingresamos al sistema.</p>
+          </li>
+          <li class="steps__item reveal">
+            <div class="steps__num">4</div>
+            <h3>Integración de canales</h3>
+            <p>Conectamos tu tienda y marketplaces para que los pedidos fluyan solos.</p>
+          </li>
+          <li class="steps__item reveal">
+            <div class="steps__num">5</div>
+            <h3>Operación en marcha</h3>
+            <p>Procesamos, despachamos y reportamos. Tú te concentras en crecer.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PLATAFORMAS -->
+    <section class="section section--alt" id="plataformas">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="eyebrow">Integraciones</span>
+          <h2 class="section__title">Plataformas y canales con los que trabajamos</h2>
+          <p class="section__lead">
+            Nos integramos con las principales plataformas de ecommerce y marketplaces
+            usados en Chile y la región.
+          </p>
+        </header>
+
+        <ul class="platforms">
+          <li class="platforms__item reveal">Shopify</li>
+          <li class="platforms__item reveal">WooCommerce</li>
+          <li class="platforms__item reveal">Mercado Libre</li>
+          <li class="platforms__item reveal">Falabella</li>
+          <li class="platforms__item reveal">Magento</li>
+          <li class="platforms__item reveal">Jumpseller</li>
+          <li class="platforms__item reveal">TiendaNube</li>
+          <li class="platforms__item reveal">PrestaShop</li>
+        </ul>
+        <p class="platforms__note reveal">
+          ¿Trabajas con otra plataforma? Cuéntanos en la cotización y evaluamos la integración.
+        </p>
+      </div>
+    </section>
+
+    <!-- CASO DE USO (placeholder honesto) -->
+    <section class="section" id="caso">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="eyebrow">Casos de uso</span>
+          <h2 class="section__title">Casos reales, pronto disponibles</h2>
+        </header>
+
+        <div class="case reveal">
+          <p class="case__text">
+            Estamos preparando casos de estudio reales con clientes activos de WSG.cl.
+            En lugar de mostrar cifras inventadas o testimonios genéricos, preferimos
+            publicar resultados verificables cuando estén listos.
+          </p>
+          <p class="case__text">
+            Si quieres una conversación honesta sobre cómo podría funcionar tu operación
+            con nosotros, agenda una cotización y revisamos tu escenario específico.
+          </p>
+          <a href="#cotizar" class="btn btn--primary">Conversemos tu caso</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq">
+      <div class="container container--narrow">
+        <header class="section__header reveal">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2 class="section__title">Lo que más nos preguntan</h2>
+        </header>
+
+        <div class="faq">
+          <details class="faq__item reveal">
+            <summary>¿Hay un volumen mínimo de pedidos para trabajar con WSG.cl?</summary>
+            <p>Evaluamos cada caso. Trabajamos con marcas pequeñas en crecimiento y con operaciones más grandes. Lo importante es que el modelo haga sentido para ambos.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Qué tipo de productos pueden manejar?</summary>
+            <p>Productos no perecibles de retail, ecommerce e importación. Si tu producto tiene requisitos especiales (frágil, regulado, dimensiones particulares) lo conversamos en la cotización.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Cómo se integra WSG.cl con mi tienda online?</summary>
+            <p>Nos conectamos con tu plataforma (Shopify, WooCommerce, marketplaces, etc.) para sincronizar pedidos y stock. El objetivo es que el pedido entre y se despache sin trabajo manual de tu equipo.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Me obligan a firmar contratos a largo plazo?</summary>
+            <p>No trabajamos con contratos rígidos. Buscamos relaciones largas porque el servicio es bueno, no porque te tengamos amarrado.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿En cuánto tiempo puedo empezar a operar?</summary>
+            <p>Depende del volumen de inventario y de la integración necesaria. Generalmente desde la firma de propuesta hasta procesar los primeros pedidos hablamos de semanas, no de meses.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Despachan a todo Chile?</summary>
+            <p>Sí, coordinamos despacho nacional con los principales couriers. La cobertura final depende del courier elegido para cada zona.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Qué pasa en temporada alta (Cyber, Navidad, campañas)?</summary>
+            <p>Para eso existe IZI Storage y nuestro modelo flexible: escalamos espacio y operación para que la temporada alta no colapse tu negocio.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Cómo se calculan los costos del servicio?</summary>
+            <p>El modelo combina almacenamiento, manipulación por pedido y despacho. Te enviamos una propuesta clara según tu volumen real, sin letra chica.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <div class="container cta-final__inner reveal">
+        <h2 class="cta-final__title">¿Listo para sacarte la logística de encima?</h2>
+        <p class="cta-final__text">
+          Cuéntanos sobre tu operación y armemos una propuesta que se ajuste a tu volumen,
+          tu temporada y tu marca.
+        </p>
+        <a href="#cotizar" class="btn btn--accent btn--lg">Solicitar cotización</a>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE COTIZACIÓN -->
+    <section class="section" id="cotizar">
+      <div class="container container--narrow">
+        <header class="section__header reveal">
+          <span class="eyebrow">Cotización</span>
+          <h2 class="section__title">Cuéntanos sobre tu operación</h2>
+          <p class="section__lead">
+            Te respondemos en menos de 24 horas hábiles con una propuesta clara
+            adaptada a lo que necesitas.
+          </p>
+        </header>
+
+        <form class="form reveal" id="quote-form" novalidate>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-nombre">Nombre *</label>
+              <input id="f-nombre" name="nombre" type="text" required autocomplete="name" />
+              <small class="form__error" data-error-for="nombre"></small>
+            </div>
+            <div class="form__field">
+              <label for="f-empresa">Empresa *</label>
+              <input id="f-empresa" name="empresa" type="text" required autocomplete="organization" />
+              <small class="form__error" data-error-for="empresa"></small>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-email">Email *</label>
+              <input id="f-email" name="email" type="email" required autocomplete="email" />
+              <small class="form__error" data-error-for="email"></small>
+            </div>
+            <div class="form__field">
+              <label for="f-telefono">Teléfono</label>
+              <input id="f-telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9 ..." />
+              <small class="form__error" data-error-for="telefono"></small>
+            </div>
+          </div>
+
+          <div class="form__field">
+            <label for="f-volumen">Volumen mensual estimado *</label>
+            <select id="f-volumen" name="volumen" required>
+              <option value="">Selecciona un rango</option>
+              <option value="0-100">Hasta 100 pedidos / mes</option>
+              <option value="100-500">100 a 500 pedidos / mes</option>
+              <option value="500-2000">500 a 2.000 pedidos / mes</option>
+              <option value="2000-5000">2.000 a 5.000 pedidos / mes</option>
+              <option value="5000+">Más de 5.000 pedidos / mes</option>
+              <option value="solo-almacenamiento">Solo almacenamiento (IZI Storage)</option>
+            </select>
+            <small class="form__error" data-error-for="volumen"></small>
+          </div>
+
+          <div class="form__field">
+            <label for="f-mensaje">Cuéntanos más sobre tu operación</label>
+            <textarea id="f-mensaje" name="mensaje" rows="5" placeholder="Producto, canales de venta, temporada, integraciones, etc."></textarea>
+          </div>
+
+          <div class="form__field form__field--check">
+            <label>
+              <input type="checkbox" id="f-privacidad" name="privacidad" required />
+              <span>Acepto ser contactado por WSG.cl para responder esta cotización.</span>
+            </label>
+            <small class="form__error" data-error-for="privacidad"></small>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--block">
+            Enviar cotización
+          </button>
+
+          <div class="form__feedback" id="form-feedback" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <span class="nav__logo-mark">W</span>
+          <span class="nav__logo-text">WSG<span class="nav__logo-dot">.cl</span></span>
+        </div>
+        <p class="footer__tagline">
+          Logística y fulfillment para ecommerce y marcas en Chile.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Almacenamiento</a></li>
+          <li><a href="#servicios">Picking &amp; Packing</a></li>
+          <li><a href="#servicios">Despacho nacional</a></li>
+          <li><a href="#servicios">Fulfillment ecommerce</a></li>
+          <li><a href="#izi-storage">IZI Storage</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="#solucion">Solución</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#para-quien">Para quién</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#cotizar">Cotizar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@wsg.cl">contacto@wsg.cl</a></li>
+          <li><a href="tel:+56000000000">+56 9 0000 0000</a></li>
+          <li>Santiago, Chile</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <span>© <span id="year"></span> WSG.cl · Todos los derechos reservados</span>
+        <span class="footer__legal">
+          <a href="#">Términos</a> · <a href="#">Privacidad</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/visual.js" defer></script>
+  <script src="js/interactions.js" defer></script>
+  <script src="js/forms.js" defer></script>
+</body>
+</html>

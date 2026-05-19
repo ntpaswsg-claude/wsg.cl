@@ -1,0 +1,104 @@
+/* =========================================================
+ * animations.css
+ * Keyframes y clases utilitarias para animaciones suaves
+ * (reveal en scroll, flotación de cards del hero, pulsos
+ * y entrada de elementos).
+ * ========================================================= */
+
+/* ---------- Reveal en scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger sutil cuando hay muchos hijos */
+.grid .reveal.is-visible:nth-child(2) {
+  transition-delay: 60ms;
+}
+.grid .reveal.is-visible:nth-child(3) {
+  transition-delay: 120ms;
+}
+.grid .reveal.is-visible:nth-child(4) {
+  transition-delay: 180ms;
+}
+.grid .reveal.is-visible:nth-child(5) {
+  transition-delay: 240ms;
+}
+.grid .reveal.is-visible:nth-child(6) {
+  transition-delay: 300ms;
+}
+
+.steps .reveal.is-visible:nth-child(2) { transition-delay: 80ms; }
+.steps .reveal.is-visible:nth-child(3) { transition-delay: 160ms; }
+.steps .reveal.is-visible:nth-child(4) { transition-delay: 240ms; }
+.steps .reveal.is-visible:nth-child(5) { transition-delay: 320ms; }
+
+/* ---------- Hero ---------- */
+@keyframes float-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bar-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(22, 163, 74, 0);
+  }
+}
+
+/* ---------- IZI Storage cells ---------- */
+@keyframes cell-pulse {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+/* ---------- Fade-in al cargar ---------- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav,
+.hero {
+  animation: fade-in 700ms var(--ease-out) both;
+}
+
+.hero {
+  animation-delay: 100ms;
+}
