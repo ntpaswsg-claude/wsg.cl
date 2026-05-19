@@ -19,7 +19,7 @@
   // │  CONFIGURACIÓN — pega aquí la URL de tu Google Apps Script      │
   // │  Ejemplo: https://script.google.com/macros/s/XXXXX/exec         │
   // └─────────────────────────────────────────────────────────────────┘
-  const FORM_ENDPOINT = "";
+  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwhy6aQgXUkikdOdhGdV8sHjZ2Fx0cHMWkbgGTfx0ETYLiO1PSzcWV1JU6IcVMU0eGATA/exec";
 
   /* ------------------------------------------------------
    * Referencias DOM
