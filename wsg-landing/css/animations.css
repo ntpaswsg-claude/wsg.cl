@@ -70,15 +70,13 @@
   }
 }
 
-/* ---------- IZI Storage cells ---------- */
-@keyframes cell-pulse {
+/* ---------- IZI Storage dashboard ---------- */
+@keyframes pulse-red {
   0%, 100% {
-    opacity: 0.85;
-    transform: scale(1);
+    box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.25);
   }
   50% {
-    opacity: 1;
-    transform: scale(1.03);
+    box-shadow: 0 0 0 6px rgba(225, 6, 0, 0.0);
   }
 }
 

@@ -54,9 +54,9 @@
     speed: 0.25,
     radius: 1.6,
     connectionDistance: 130,
-    particleColor: "rgba(15, 36, 68, 0.55)",
-    lineColor: "rgba(15, 36, 68, 0.12)",
-    accentColor: "rgba(249, 115, 22, 0.6)",
+    particleColor: "rgba(17, 17, 17, 0.55)",
+    lineColor: "rgba(17, 17, 17, 0.12)",
+    accentColor: "rgba(225, 6, 0, 0.7)",
   };
 
   function resize() {
@@ -126,7 +126,7 @@
         const dSq = dx * dx + dy * dy;
         if (dSq < maxDistSq) {
           const alpha = 1 - dSq / maxDistSq;
-          ctx.strokeStyle = `rgba(15, 36, 68, ${alpha * 0.18})`;
+          ctx.strokeStyle = `rgba(17, 17, 17, ${alpha * 0.18})`;
           ctx.lineWidth = 0.7;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);

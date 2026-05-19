@@ -24,7 +24,7 @@
 }
 
 .section--alt {
-  background-color: var(--color-bg-alt);
+  background-color: var(--color-bg-soft);
 }
 
 .section__header {
@@ -65,7 +65,7 @@
 }
 
 .eyebrow--light {
-  color: #ffd9b8;
+  color: #FFB3B0;
 }
 
 /* ---------- Grids ---------- */

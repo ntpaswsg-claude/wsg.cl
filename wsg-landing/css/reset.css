@@ -14,38 +14,49 @@
 }
 
 :root {
-  /* Paleta */
-  --color-primary: #0f2444;
-  --color-primary-700: #122c54;
-  --color-primary-900: #0a1a33;
-  --color-accent: #f97316;
-  --color-accent-600: #ea6a0f;
+  /* Paleta WSG.cl — continuidad con Webstorage.cl
+     Base: blanco, negro y grises. Acento: rojo Ferrari. */
+  --color-primary: #E10600;
+  --color-primary-dark: #B80000;
+  --color-primary-soft: #FFE8E6;
 
-  --color-bg: #ffffff;
-  --color-bg-alt: #f6f8fb;
-  --color-bg-dark: #0a1a33;
+  --color-accent: #E10600;
+  --color-accent-dark: #B80000;
+  --color-accent-soft: #FFE8E6;
 
-  --color-text: #1e293b;
-  --color-text-muted: #64748b;
-  --color-text-light: #ffffff;
-  --color-border: #e2e8f0;
-  --color-border-strong: #cbd5e1;
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #F6F6F6;
+  --color-bg-muted: #ECECEC;
 
-  --color-success: #16a34a;
-  --color-error: #dc2626;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #FAFAFA;
+  --color-surface-strong: #111111;
+
+  --color-text: #111111;
+  --color-text-muted: #555555;
+  --color-text-soft: #888888;
+  --color-text-inverse: #FFFFFF;
+
+  --color-border: #DDDDDD;
+  --color-border-strong: #BDBDBD;
+
+  --color-success: #20B486;
+  --color-success-soft: #E9FBF5;
+
+  --color-error: #B80000;
+
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.10);
+  --shadow-red: 0 14px 34px rgba(225, 6, 0, 0.20);
 
   /* Tipografía */
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-  /* Radios y sombras */
+  /* Radios */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-xl: 24px;
-
-  --shadow-sm: 0 1px 2px rgba(15, 36, 68, 0.06), 0 1px 1px rgba(15, 36, 68, 0.04);
-  --shadow-md: 0 6px 18px rgba(15, 36, 68, 0.08), 0 2px 4px rgba(15, 36, 68, 0.04);
-  --shadow-lg: 0 20px 40px rgba(15, 36, 68, 0.12);
 
   /* Espaciado */
   --space-1: 4px;
@@ -120,7 +131,7 @@ ol {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 p {
