@@ -59,7 +59,7 @@
     connectionDistance: 130,
     particleColor: "rgba(17, 17, 17, 0.55)",
     lineColor: "rgba(17, 17, 17, 0.12)",
-    accentColor: "rgba(225, 6, 0, 0.7)",
+    accentColor: "rgba(227, 6, 19, 0.7)",
   };
 
   function resize() {

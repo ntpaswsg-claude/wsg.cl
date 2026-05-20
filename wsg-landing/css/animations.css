@@ -1,8 +1,8 @@
 /* =========================================================
  * animations.css
- * Keyframes y clases utilitarias para animaciones suaves
- * (reveal en scroll, flotación de cards del hero, pulsos
- * y entrada de elementos).
+ * Keyframes y clases utilitarias para animaciones del sitio
+ * WSG.cl (reveal en scroll, pulso del dashboard IZI, fade-in
+ * al cargar).
  * ========================================================= */
 
 /* ---------- Reveal en scroll ---------- */
@@ -14,89 +14,34 @@
     transform 600ms var(--ease-out);
   will-change: opacity, transform;
 }
-
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Stagger sutil cuando hay muchos hijos */
-.grid .reveal.is-visible:nth-child(2) {
-  transition-delay: 60ms;
-}
-.grid .reveal.is-visible:nth-child(3) {
-  transition-delay: 120ms;
-}
-.grid .reveal.is-visible:nth-child(4) {
-  transition-delay: 180ms;
-}
-.grid .reveal.is-visible:nth-child(5) {
-  transition-delay: 240ms;
-}
-.grid .reveal.is-visible:nth-child(6) {
-  transition-delay: 300ms;
-}
+/* Stagger sutil cuando hay varios .reveal hermanos en el mismo bloque */
+.services__list .services__item:nth-child(2).is-visible { transition-delay: 60ms; }
+.services__list .services__item:nth-child(3).is-visible { transition-delay: 120ms; }
+.services__list .services__item:nth-child(4).is-visible { transition-delay: 180ms; }
 
-.steps .reveal.is-visible:nth-child(2) { transition-delay: 80ms; }
-.steps .reveal.is-visible:nth-child(3) { transition-delay: 160ms; }
-.steps .reveal.is-visible:nth-child(4) { transition-delay: 240ms; }
-.steps .reveal.is-visible:nth-child(5) { transition-delay: 320ms; }
+.audience__grid .reveal.is-visible:nth-child(2) { transition-delay: 60ms; }
+.audience__grid .reveal.is-visible:nth-child(3) { transition-delay: 120ms; }
+.audience__grid .reveal.is-visible:nth-child(4) { transition-delay: 180ms; }
 
-/* ---------- Hero ---------- */
-@keyframes float-y {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes bar-grow {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(32, 180, 134, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 10px rgba(32, 180, 134, 0);
-  }
-}
-
-/* ---------- IZI Storage dashboard ---------- */
+/* ---------- Pulso rojo del dashboard IZI ---------- */
 @keyframes pulse-red {
-  0%, 100% {
-    box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 0 6px rgba(225, 6, 0, 0.0);
-  }
+  0%, 100% { box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.25); }
+  50%      { box-shadow: 0 0 0 6px rgba(227, 6, 19, 0.0); }
 }
 
-/* ---------- Fade-in al cargar ---------- */
+/* ---------- Fade-in al cargar (nav + hero) ---------- */
 @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .nav,
 .hero {
   animation: fade-in 700ms var(--ease-out) both;
 }
-
-.hero {
-  animation-delay: 100ms;
-}
+.hero { animation-delay: 100ms; }
