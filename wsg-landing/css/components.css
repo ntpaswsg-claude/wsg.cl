@@ -58,35 +58,48 @@
 }
 
 .nav__logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-weight: 800;
-  color: var(--color-text);
-}
-
-.nav__logo-mark {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--color-surface-strong), var(--color-primary));
-  color: #fff;
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: -0.02em;
-  box-shadow: var(--shadow-soft);
+  flex-shrink: 0;
+  min-width: 0;
 }
 
-.nav__logo-text {
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
+/* Logo oficial WSG en el nav. Altura controlada por viewport para
+   evitar que empuje al CTA "Cotizar" en mobile. object-fit:contain
+   y width:auto preservan proporción original del PNG. */
+.nav__logo-img {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-width: 60vw;
+  object-fit: contain;
 }
 
-.nav__logo-dot {
-  color: var(--color-accent);
+@media (max-width: 640px) {
+  .nav__logo-img {
+    height: 38px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav__logo-img {
+    height: 34px;
+  }
+}
+
+/* Utilidad accesible: oculta visualmente pero deja disponible para
+   lectores de pantalla. Aplicar cuando el alt del <img> ya cubre la
+   información y un texto duplicado generaría redundancia. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .nav__links {
@@ -1206,14 +1219,22 @@
 .footer__logo {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  font-weight: 800;
-  color: #fff;
-  font-size: 1.1rem;
+  text-decoration: none;
 }
 
-.footer__logo .nav__logo-text {
-  color: #fff;
+/* Logo oficial WSG (variante blanca) sobre el footer oscuro. */
+.footer__logo-img {
+  display: block;
+  height: 56px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .footer__logo-img {
+    height: 48px;
+  }
 }
 
 .footer__slogan {
