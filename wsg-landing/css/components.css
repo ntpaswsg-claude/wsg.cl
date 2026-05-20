@@ -105,6 +105,19 @@
 @media (max-width: 640px) { .nav__logo-img { height: 38px; } }
 @media (max-width: 420px) { .nav__logo-img { height: 34px; } }
 
+/* Logo responsive: desktop usa logo.png, mobile usa logo-wsg-movil.png */
+.nav__logo-img--desktop { display: block; }
+.nav__logo-img--mobile  { display: none; }
+
+@media (max-width: 879px) {
+    .nav__logo-img--desktop { display: none; }
+    .nav__logo-img--mobile  {
+          display: block;
+          height: 44px;
+          max-width: 240px;
+    }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px; height: 1px;
