@@ -226,6 +226,55 @@ fotografiado, NO render CGI ni ilustración.
 
 ---
 
+---
+
+## ✅ FRAME APROBADO — Concepto 01 · Animación Flow IA adaptada a la imagen final
+
+> Frame aprobado: vista aérea 3/4 mirando dentro de la caja kraft "WSG · World Supply Group" (código de barras 40181 700982). Torre WSG con haz de luz arriba-derecha, drones en varios niveles, venas rojas por las cintas elevadas, hub circular rojo al centro, scanner con ojo rojo a la derecha, luna con nubes arriba-izquierda.
+
+### 5 · Cómo animar con Flow IA (adaptado al frame)
+
+**Movimiento de cámara (columna vertebral del plano):**
+Push-in lento y descendente que arranca sobre el borde de cartón corrugado del primer plano y "entra" a la ciudad, derivando en diagonal hacia la torre WSG del fondo-derecha. Muy leve parallax: los edificios cercanos de la izquierda se desplazan más rápido que la torre lejana, vendiendo la profundidad de maqueta viva. Sin sacudidas — glide sobre riel.
+
+**Movimiento ambiental / de elementos (motion brush por capa):**
+- **Venas rojas:** el tráfico de luz roja fluye por las cintas transportadoras elevadas del centro-abajo, avanzando hacia la torre (dirección de la mirada). Pulsos que corren como datos.
+- **Drones:** los 4–5 drones derivan lentos en distintos niveles con parallax; los de arriba cruzan hacia la derecha, los de la izquierda ascienden suavemente. Sus luces rojas de navegación parpadean.
+- **Hub circular:** el anillo rojo del roundabout central gira despacio sobre su eje.
+- **Scanner (ojo rojo, derecha):** rota unos grados y su lente roja late, "escaneando" la ciudad.
+- **Haz de la torre WSG:** el reflector blanco barre lentamente el cielo; halación creciente conforme la cámara se acerca.
+- **Ventanas:** micro-flicker sutil en los bloques de acrílico iluminados (vida urbana).
+
+**Luces y sombras:**
+La luna arriba-izquierda mantiene el key frío; conforme la cámara entra, sube la intensidad del glow rojo de las arterias y del letrero WSG. Sombras largas que se desplazan levemente con el avance de cámara.
+
+**Atmósfera / profundidad:**
+Neblina volumétrica derivando lento entre las torres; los god-rays de la torre cortando la bruma se intensifican. Polvo suspendido brillando al cruzar los haces. Profundidad reforzada por el parallax de capas.
+
+**Duración:** 7–9 s.
+
+**Final del plano:**
+La cámara llega frente a la torre; el letrero **"WSG"** rojo flarea (bloom) y llena el encuadre → corte/fundido al **logo WSG en grande sobre fondo grafito**, con el haz de luz aún visible detrás.
+
+**Loop:** posible — pull-back suave (retroceso invertido) que devuelve la cámara al plano abierto inicial sobre la caja, cerrando el ciclo sin corte perceptible.
+
+**Tips de ejecución en Flow IA:**
+- Preset de cámara "push-in / dolly forward" + micro-descenso.
+- Motion brush independiente para: venas rojas (flujo direccional), drones (deriva + parallax), haz de la torre (barrido), ojo del scanner (pulso).
+- Si Flow limita el clip a 5 s, generar en 2 segmentos (entrada a la ciudad → llegada a la torre) y unir.
+- Mantener el rojo como único color vivo también en el video: no dejar que el grado de color caliente el resto.
+
+### 6 · Texto principal
+> **Tu negocio es más grande de lo que imaginas.**
+
+### 7 · Subtexto
+> Escala sin límites. Logística inteligente que impulsa tu crecimiento.
+
+### 8 · CTA
+> **Descubre webstorage.cl**
+
+---
+
 ## Nota de dirección para la fase de generación (cuando se apruebe)
 - Generar **3–4 variaciones por concepto** cambiando solo un eje (altura de cámara / intensidad del haz / proporción de aire) y elegir por *scroll-stop*.
 - Pedir el frame con **el tercio superior despejado** para el texto principal del reel.
