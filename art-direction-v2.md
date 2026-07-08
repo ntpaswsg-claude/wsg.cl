@@ -77,42 +77,50 @@ El choque de escalas y materiales: cartón kraft humilde + metrópolis épica vi
 ### Qué la salva de parecer IA
 Plano focal tilt-shift con falloff real · una sola dirección de luz con sombras consistentes · canto de cartón acanalado · polvo en el haz · asimetría de maqueta hecha a mano · aberración cromática y grano leves · nada perfectamente simétrico ni sobre-brillante.
 
-### 🎯 Prompt optimizado para GPT Image 2.0
+> **Decisión aprobada:** ESCALA CINEMATOGRÁFICA — tilt-shift sutil, ambiguo entre maqueta y ciudad real épica. Más Blade Runner, más grandioso. La caja sigue presente como marco, pero el interior se lee como una metrópolis vasta y monumental.
+
+### 🎯 Prompt FINAL optimizado para GPT Image 2.0 (escala cinematográfica)
 ```
-Fotografía macro de estudio, hiperrealista, de una MAQUETA ARQUITECTÓNICA FÍSICA
-REAL, no un render digital. Formato vertical 9:16. Una caja de cartón corrugado
-kraft abierta, colocada sobre una superficie oscura de estudio; el canto cortado
-muestra claramente el acanalado ondulado del cartón. Dentro de la caja, en lugar
-de productos, vive una metrópolis nocturna en miniatura construida ÚNICAMENTE con
-hardware logístico real: rascacielos hechos de racks industriales de aluminio
-cepillado apilados, edificios formados por torres de pallets y bloques de acrílico
-lechoso retroiluminado, autopistas que son cintas transportadoras de caucho con
-textura de chevrones, torres de control que en realidad son scanners industriales
-verticales con lente de vidrio, y diminutos drones autónomos del tamaño de insectos
-con luces rojas de navegación transportando micro-paquetes entre las torres.
-Finas venas de neón rojo Ferrari (#E30613) recorren las calles como arterias de
-datos y pedidos, latiendo desde un hub central. La torre más alta, una torre de
-control con un beacon rojo WSG encendido, se sitúa sobre la línea de tercio superior
-derecha, recibiendo un haz de luz lunar fría. Una avenida-cinta transportadora nace
-en primer plano y conduce en diagonal hasta la torre. La solapa frontal de la caja
-entra en primer plano desenfocada, enmarcando la escena.
-ÓPTICA: lente tilt-shift 50mm, plano focal inclinado — torre y avenida central
-nítidas, bordes y solapa en bokeh; efecto miniatura tilt-shift creíble.
-CÁMARA: picado 3/4 de 38 grados, a la altura del borde superior de la caja.
-LUZ: nocturna en tres capas — key de luz lunar azul-fría rasante desde arriba
-izquierda esculpiendo el cartón con sombra larga coherente; fill cálido de sodio
-apagado saliendo de miles de ventanas diminutas; acento de neón rojo a nivel de
-calle. Un god-ray entra por la abertura de la caja revelando neblina volumétrica y
-motas de polvo suspendidas.
+Fotografía cinematográfica hiperrealista, formato vertical 9:16, aspecto de fotograma
+de película de gran presupuesto, NO ilustración digital ni render CGI. Una caja de
+cartón corrugado kraft abierta ocupa el borde inferior del cuadro; su canto cortado
+muestra sutilmente el acanalado del cartón, confirmando que es un objeto físico real.
+Pero al asomarse dentro se revela una METRÓPOLIS NOCTURNA VASTA Y MONUMENTAL, de
+escala épica y profundidad imposible, construida ÚNICAMENTE con hardware logístico:
+rascacielos altísimos hechos de racks industriales de aluminio cepillado apilados en
+estructuras verticales, edificios formados por torres de pallets y volúmenes de
+acrílico lechoso retroiluminado, autopistas elevadas que son cintas transportadoras
+de caucho con textura de chevrones, torres de control que en realidad son scanners
+industriales gigantes con lente de vidrio, drones autónomos con luces rojas de
+navegación surcando el aire entre las torres en varios niveles. Finas venas de neón
+rojo Ferrari (#E30613) recorren la ciudad como arterias de datos y pedidos, latiendo
+desde un hub central hacia los rascacielos. La torre más alta, una torre de control
+con un beacon rojo WSG encendido, se eleva sobre la línea de tercio superior derecho
+recibiendo un haz de luz lunar fría. Una gran avenida-cinta transportadora nace en
+primer plano y fuga en diagonal hacia el corazón de la ciudad. Densa perspectiva
+atmosférica: las torres lejanas se difuminan en neblina. Estética Blade Runner ×
+Tron: densidad, lluvia de luz, geometría de datos, grandiosidad.
+ÓPTICA: gran angular anamórfico 28mm con TILT-SHIFT SUTIL — plano focal levemente
+inclinado que conserva casi todo nítido pero insinúa el encanto de maqueta; flares
+horizontales sutiles.
+CÁMARA: picado 3/4 de 35 grados, apenas sobre el borde de la caja, mirando hacia la
+profundidad de la ciudad.
+LUZ: nocturna en capas — key de luz lunar azul-fría rasante desde arriba izquierda
+con sombras largas coherentes; fill cálido de sodio apagado emanando de decenas de
+miles de ventanas; acento de neón rojo a nivel de calle y en las arterias. Fuertes
+god-rays volumétricos entrando por la abertura de la caja, revelando bruma y polvo
+suspendido; haces de luz de los edificios cortando la neblina.
 PALETA: grafito y carbón, sombras azul-gris desaturadas, blancos de sodio cálidos,
-kraft del cartón como único neutro cálido, y rojo Ferrari #E30613 como única
-saturación alta (menos del 8% del cuadro).
+el kraft del cartón como único neutro cálido, y rojo Ferrari #E30613 como única
+saturación alta de toda la escena (menos del 8% del cuadro).
 TEXTURAS: acanalado del cartón, aluminio con grano fino, acrílico con microrrayas,
-concreto mate, polvo en el haz de luz. Detalle: un código de barras sutil grabado
-en el exterior del cartón.
-ACABADO: fotografía de campaña internacional, aberración cromática sutil, grano
-fotográfico fino, rango dinámico amplio, 8K, profundidad de campo cinematográfica.
-Aspecto de diorama físico fotografiado, NO de ilustración digital.
+concreto mate, bruma volumétrica, polvo en los haces. Detalle: un código de barras
+sutil grabado en el exterior del cartón.
+ACABADO: fotografía de campaña internacional / still cinematográfico, aberración
+cromática sutil, grano fílmico fino, halación en las luces, rango dinámico amplio,
+8K, profundidad de campo cinematográfica. Tercio superior del cuadro despejado en
+cielo/neblina para texto. Objeto físico fotografiado a escala épica, NUNCA aspecto
+de render digital limpio ni ilustración.
 ```
 
 ---
@@ -176,38 +184,44 @@ La **paradoja**: un efecto dominó que crea orden en vez de derribar. La única 
 ### Qué la salva de parecer IA
 Disciplina de fotografía de producto: una sola key coherente, reflejos de suelo físicamente correctos, microtextura de granallado real, logo grabado (no flotando), paleta restringidísima, profundidad de campo creíble con campo lejano **intencionalmente suave** (mata la repetición delatora), grano fino anti-CGI.
 
-### 🎯 Prompt optimizado para GPT Image 2.0
+> **Decisión aprobada:** FICHA ROJA PROTAGONISTA — macro con la ficha WSG monumental en primer plano, heroica; el campo negro se ordena detrás en bokeh. Más Apple, máximo impacto de marca.
+
+### 🎯 Prompt FINAL optimizado para GPT Image 2.0 (ficha roja protagonista)
 ```
 Fotografía de producto de gama alta, hiperrealista, estilo Apple / Porsche / Nothing.
 Formato vertical 9:16, muchísimo espacio negativo. Escena escultórica y minimalista
 sobre un barrido de estudio oscuro continuo (infinity sweep) de grafito cepillado con
 reflejo suave y controlado.
-SUJETO: miles de fichas de dominó negras de precisión — cerámica mate / aluminio
-anodizado micro-granallado, con bisel superior que atrapa la luz — dispuestas en el
-tercio inferior de la imagen. Una ÚNICA ficha roja vertical, en laca automotriz rojo
-Ferrari (#E30613), con el logotipo 'WSG' grabado en deboss (etched, no impreso),
-domina el primer plano sobre la intersección de tercios inferior-izquierda, nítida y
-perfecta: es el único elemento con color saturado.
-MOMENTO CONGELADO: desde la ficha roja irradia una onda radial concéntrica de
-ordenamiento — las fichas negras cercanas se elevan y giran a media rotación,
-alineándose y abriendo un pasillo central de espacio negativo que fuga hacia el fondo.
-No es caos ni colapso: es una coreografía de orden emergiendo, movimiento congelado.
-Un hilo de luz roja traza el corredor. En el borde de profundidad, muy suavemente
-insinuada, la primera geometría de una estructura de rack empezando a emerger.
-ÓPTICA: macro 100mm a f/4 — ficha roja cristalina, campo lejano en bokeh limpio y
-suave. CÁMARA: 3/4 elevado 25 grados.
-LUZ: key soft grande frontal-superior rasante que revela los biseles y el relieve de
-la onda; kicker trasero que separa los objetos del fondo; pool de luz en gradiente
-detrás como glow de héroe; especular controlado en el canto de la ficha roja y leve
-rebote rojo en las fichas negras más próximas.
+PROTAGONISTA: una ÚNICA ficha de dominó roja vertical, MONUMENTAL, en primer plano,
+llenando el eje inferior-izquierdo del cuadro y elevándose heroica hacia arriba —
+acabado de laca automotriz rojo Ferrari (#E30613) profunda, con el logotipo 'WSG'
+grabado en deboss (etched, no impreso) que atrapa la luz en su canto. Es el único
+elemento con color saturado y el que el ojo golpea primero. Nítida y perfecta, con un
+especular controlado corriendo por su borde.
+FONDO: detrás y alrededor, en profundidad y cayendo a bokeh limpio, miles de fichas
+de dominó negras de precisión — cerámica mate / aluminio anodizado micro-granallado
+con bisel superior que atrapa la luz. Desde la base de la ficha roja irradia una onda
+radial concéntrica de ordenamiento: las fichas negras se elevan y giran a media
+rotación, alineándose y abriendo un pasillo central de espacio negativo que fuga al
+fondo. No es caos ni colapso: coreografía de orden emergiendo, movimiento congelado.
+Un hilo de luz roja traza el corredor. Muy al fondo, suavísimamente insinuada en el
+bokeh, la primera geometría de una estructura de rack empezando a emerger.
+ÓPTICA: macro 100mm a f/2.8 — ficha roja cristalina en primer plano, campo negro en
+bokeh cremoso. CÁMARA: 3/4 bajo-heroico de 18 grados, cerca del suelo, mirando hacia
+arriba a la ficha roja para darle monumentalidad.
+LUZ: key soft grande frontal-superior rasante que revela biseles y relieve de la onda;
+kicker trasero que separa objetos del fondo; pool de luz en gradiente detrás como glow
+de héroe Apple; especular controlado en el canto de la ficha roja y leve rebote rojo
+en las fichas negras más próximas.
 PALETA: grafito casi negro, grises neutros fríos, un solo rojo Ferrari #E30613. Un
 matiz cálido apenas en los altos.
-TEXTURAS: micro-granallado finísimo, cantos mecanizados precisos, reflejos de suelo
-físicamente correctos, grano fotográfico fino. Sin polvo, sin plástico barato.
-La escena se disuelve en negro puro hacia la mitad superior del cuadro.
+TEXTURAS: micro-granallado finísimo, cantos mecanizados precisos, laca profunda con
+reflejo especular, reflejos de suelo físicamente correctos, grano fotográfico fino.
+Sin polvo, sin plástico barato. La escena se disuelve en negro puro hacia la mitad
+superior del cuadro, dejando aire para el texto.
 ACABADO: fotografía de campaña internacional de producto, iluminación de estudio
-impecable, alto contraste controlado, 8K, profundidad de campo real. Aspecto de
-objeto físico fotografiado, NO de render CGI ni ilustración.
+impecable, alto contraste controlado, 8K, profundidad de campo real. Objeto físico
+fotografiado, NO render CGI ni ilustración.
 ```
 
 ---
