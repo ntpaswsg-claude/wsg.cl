@@ -1,0 +1,80 @@
+<title>IMG_LOGO · Keyframe final webstorage (9:16)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    background: #111;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Helvetica Neue", Arial, system-ui, sans-serif;
+  }
+  /* 9:16 keyframe — export this box at 1080×1920 */
+  .frame {
+    position: relative;
+    width: min(405px, 92vw);
+    aspect-ratio: 9 / 16;
+    background: #000;               /* negro puro, para interpolar en Flow */
+    overflow: hidden;
+    box-shadow: 0 30px 90px -30px rgba(227,6,19,.22);
+  }
+  .logo {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 74%;
+    color: #f4f3f0;                 /* blanco cálido */
+  }
+  .word {
+    font-weight: 700;
+    font-size: clamp(38px, 12vw, 62px);
+    letter-spacing: -.045em;
+    line-height: .9;
+    white-space: nowrap;
+  }
+  .row {
+    margin-top: clamp(8px, 2.4vw, 13px);
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 3vw, 16px);
+  }
+  .tag {
+    font-weight: 400;
+    font-size: clamp(13px, 4vw, 20px);
+    letter-spacing: .18em;
+    white-space: nowrap;
+  }
+  .bar {
+    flex: 1;
+    height: clamp(4px, 1.1vw, 6px);
+    background: #e30613;            /* rojo Ferrari, único color */
+    border-radius: 2px;
+    box-shadow: 0 0 14px rgba(227,6,19,.55);
+  }
+  .url {
+    position: absolute;
+    bottom: 12%; left: 0; right: 0;
+    text-align: center;
+    color: #8b8a85;
+    font-size: clamp(11px, 3vw, 15px);
+    letter-spacing: .28em;
+  }
+  /* caption below the frame, not part of the export */
+  .note {
+    position: fixed; bottom: 14px; left: 0; right: 0;
+    text-align: center; color: #777;
+    font-size: 12px; letter-spacing: .04em; padding: 0 20px;
+  }
+  .note b { color: #ccc; }
+</style>
+
+<div class="frame">
+  <div class="logo">
+    <div class="word">webstorage</div>
+    <div class="row">
+      <span class="tag">store&amp;ship</span>
+      <span class="bar"></span>
+    </div>
+  </div>
+  <div class="url">webstorage.cl</div>
+</div>
+
+<p class="note">IMG_LOGO · frame final 9:16 · <b>exportar a 1080×1920</b> · negro puro + logo blanco + subrayado rojo #E30613</p>
