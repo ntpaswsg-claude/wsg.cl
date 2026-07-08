@@ -303,6 +303,31 @@ La cámara llega frente a la torre; el letrero **"WSG"** rojo flarea (bloom) y l
 
 **Loop:** posible — la ficha roja se re-endereza (reverso) y las estructuras se repliegan suavemente, devolviendo el frame inicial.
 
+---
+
+### ✳️ Transición de cierre — "WSG" (endframe rojo) → logo oficial webstorage
+
+> Endframe entregado: wordmark 3D **"WSG"** rojo con glow sobre negro + **hilo de neón rojo** serpenteante al pie con un pequeño destello. Cierre elegido: **logo blanco sobre negro**, con la línea roja `#E30613` como único color vivo.
+>
+> **Idea rectora:** el hilo rojo NO es decoración — es la misma arteria que ordenó el corredor de dominós. En la transición se endereza y se convierte en la **línea roja del logo webstorage**. El rojo que organizó la operación firma con la marca.
+
+**Duración total de la transición:** ~1,8–2,2 s (en la cola del reel). Beats:
+
+- **A · El hilo se ordena (0–0,4 s):** el destello viaja por el neón rojo del pie hacia la izquierda; el lazo se desenrolla y la línea se **endereza en una sola horizontal roja limpia**, deslizándose a centro. Continuidad directa con la arteria de los dominós.
+- **B · WSG se apaga (0,4–0,9 s):** el glow de "WSG" **colapsa hacia adentro**; las letras bajan de intensidad y se disuelven (scale-down 0,96 + blur + fade), despejando el centro. En paralelo, la línea roja **asciende** desde el pie hacia el centro vertical.
+- **C · webstorage se revela (0,9–1,7 s):** el wordmark **"webstorage"** aparece en **blanco** mediante un *wipe / máscara de izquierda a derecha* (misma dirección que viajó el neón). La línea roja se asienta como **subrayado** a la derecha, bajo el tramo final del wordmark (posición oficial del logo). **"store&ship"** entra en fade abajo-izquierda, en su lugar.
+- **D · Firma (1,7–2,2 s):** respiración: un único pulso de glow recorre el subrayado rojo; el **destello** del endframe aterriza como *glint* en el extremo derecho de la línea. Hold sobre el logo limpio. Debajo, en pequeño: **webstorage.cl**.
+
+**Color / consistencia:** fondo negro puro; "webstorage" y "store&ship" en blanco (#F4F3F0); subrayado y glint en rojo Ferrari `#E30613` — único color saturado. Sin degradados cálidos.
+
+**Tipografía:** usar el archivo de logo oficial (no re-tipografiar). En el reel, versión **invertida (blanca)** del logotipo; el subrayado rojo se conserva idéntico.
+
+**Dónde se hace:** esta transición es paso de **motion graphics / edición** (After Effects, Premiere, CapCut o similar), NO de Flow IA. Flow entrega el clip que termina en el endframe "WSG"; sobre ese último frame se monta la transición al logo:
+- *After Effects:* animar el neón con Trim Paths (enderezar), fade/scale del "WSG", y revelar "webstorage" con un track matte (wipe L→R). El subrayado = shape layer rojo con un pulso de glow (Glow effect, breathing).
+- *CapCut / editor simple:* clip de Flow → superponer el logo blanco PNG con keyframes de opacidad + una barra roja que crece de izquierda a derecha; glint con un asset de destello.
+
+**Loop del reel completo:** si se busca loop, tras el hold del logo hacer un fundido corto a negro que reconecte con el frame inicial del reel (la ficha roja en quietud).
+
 **Tips de ejecución en Flow IA:**
 - Motion brush separado para: ficha roja (tip/caída hacia cámara), fichas negras (levantarse + rotar + alinear), láser rojo (flujo acelerado), racks/pallets (emerger + encajar).
 - Preset de cámara "dolly forward" bajo, lento.
