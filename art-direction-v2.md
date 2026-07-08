@@ -275,6 +275,51 @@ La cámara llega frente a la torre; el letrero **"WSG"** rojo flarea (bloom) y l
 
 ---
 
+---
+
+## ✅ FRAME APROBADO — Concepto 02 · Animación Flow IA adaptada a la imagen final
+
+> Frame aprobado: ficha roja WSG monumental en laca profunda (grabado WSG + pips) al frente-izquierda, ligeramente inclinada; suelo de grafito cepillado reflectante; pasillo central de fichas negras que fuga al fondo; hilo láser rojo recorriendo el corredor hasta un nodo rojo; estructura de rack asomando en la bruma al final; parte superior en negro puro.
+
+### 5 · Cómo animar con Flow IA (adaptado al frame)
+
+**Beat 0 (0–1 s) — quietud:** el frame estático respira; solo el hilo láser rojo late suavemente y un leve brillo recorre el canto de la ficha roja. Tensión contenida.
+
+**Beat 1 (1–2 s) — el disparo:** la ficha roja WSG se inclina y **cae hacia adelante** (hacia cámara), el gesto que lo detona todo. Su reflejo en el suelo la acompaña.
+
+**Beat 2 (2–5 s) — génesis del orden (NO colapso):** en lugar de derribarse, una **onda recorre el pasillo hacia el fondo**: las fichas negras que están inclinadas **se levantan, giran y se alinean solas** en filas perfectamente paralelas, formando pasillos nítidos. El hilo láser rojo **acelera** por el corredor hasta el nodo. Desde el suelo de los pasillos **emergen estructuras de rack** (la que ya asoma al fondo crece y se despliega), y luego **se deslizan pallets** encajando en los niveles. Luces rojas corren por los caminos recién formados.
+
+**Beat 3 (5–7 s) — llegada:** micro push-in de cámara bajando por el corredor central, siguiendo el láser rojo hacia la estructura completa que termina de armarse en el fondo. Parallax entre las filas cercanas y la estructura lejana.
+
+**Movimiento de cámara:** dolly-in lento y bajo por el eje del pasillo (18°, casi a ras de suelo), manteniendo la ficha roja anclada en el borde izquierdo del cuadro hasta que cae; sin sacudidas.
+
+**Luces y sombras:** key soft frontal constante; conforme el orden se forma, sube el glow rojo del láser y de las vetas de los pasillos; reflejos en el suelo pulido acompañando cada ficha que se alinea; el pool de luz del fondo (glow Apple) se intensifica al llegar a la estructura.
+
+**Atmósfera / profundidad:** bruma tenue al fondo que se despeja al armarse la estructura; grano fino; reflejos físicamente correctos en el grafito.
+
+**Duración:** 6–8 s.
+
+**Final del plano:** la estructura logística queda perfecta y en silencio → fundido al **logo WSG en grande con glow rojo sobre negro**, y aparece el claim. El hilo láser rojo permanece como firma bajo el logo.
+
+**Loop:** posible — la ficha roja se re-endereza (reverso) y las estructuras se repliegan suavemente, devolviendo el frame inicial.
+
+**Tips de ejecución en Flow IA:**
+- Motion brush separado para: ficha roja (tip/caída hacia cámara), fichas negras (levantarse + rotar + alinear), láser rojo (flujo acelerado), racks/pallets (emerger + encajar).
+- Preset de cámara "dolly forward" bajo, lento.
+- Si el clip topa en 5 s, generar 2 segmentos: (1) disparo + onda de orden; (2) push-in + armado de la estructura; unir.
+- Rojo como único color vivo también en el grade: negros profundos, cero deriva cálida en el resto.
+
+### 6 · Texto principal
+> **Cuando tu logística está bien diseñada, todo lo demás también se ordena.**
+
+### 7 · Subtexto
+> Orden que se diseña. Crecimiento que se acelera.
+
+### 8 · CTA
+> **Ordena hoy. Crece mañana.**
+
+---
+
 ## Nota de dirección para la fase de generación (cuando se apruebe)
 - Generar **3–4 variaciones por concepto** cambiando solo un eje (altura de cámara / intensidad del haz / proporción de aire) y elegir por *scroll-stop*.
 - Pedir el frame con **el tercio superior despejado** para el texto principal del reel.
