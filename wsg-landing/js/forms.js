@@ -233,6 +233,9 @@
             showToast("success", MSG.successToast);
           }
           form.reset();
+          // Tracking ADITIVO: envío confirmado como exitoso. Único punto
+          // donde se dispara generate_lead (definido en tracking.js).
+          if (window.wsgTrackGenerateLead) window.wsgTrackGenerateLead();
         } else {
           showFeedback("error", MSG.inlineError);
           showToast("error", MSG.errorToast);
