@@ -51,26 +51,50 @@
 
       var href = (el.getAttribute && el.getAttribute("href")) || "";
       var hrefLower = href.toLowerCase();
-      var text = normText(el);
+      var text = normText(el); // minúsculas: solo para el matching de reglas
+      // Parámetros de enriquecimiento (no alteran el comportamiento):
+      var ctaText = (el.textContent || "").replace(/\s+/g, " ").trim(); // texto visible original
+      var linkUrl = el.href || null; // URL absoluta resuelta; null si no hay (p. ej. <button>)
+      var pageLoc = window.location.href;
 
       // click_whatsapp — href contiene wa.me o whatsapp
       if (hrefLower.indexOf("wa.me") !== -1 || hrefLower.indexOf("whatsapp") !== -1) {
-        push({ event: "click_whatsapp" });
+        push({
+          event: "click_whatsapp",
+          link_url: el.href,
+          cta_text: ctaText,
+          page_location: pageLoc,
+        });
       }
 
       // click_email — href empieza con mailto:
       if (hrefLower.indexOf("mailto:") === 0) {
-        push({ event: "click_email" });
+        push({
+          event: "click_email",
+          link_url: el.href,
+          cta_text: ctaText,
+          page_location: pageLoc,
+        });
       }
 
       // click_izi_demo — href="#izi-storage" o texto contiene "conocer izi storage"
       if (href === "#izi-storage" || text.indexOf("conocer izi storage") !== -1) {
-        push({ event: "click_izi_demo" });
+        push({
+          event: "click_izi_demo",
+          link_url: linkUrl,
+          cta_text: ctaText,
+          page_location: pageLoc,
+        });
       }
 
       // click_cotiza — href="#cotizar" o texto exacto de la lista
       if (href === "#cotizar" || COTIZA_TEXTS.indexOf(text) !== -1) {
-        push({ event: "click_cotiza" });
+        push({
+          event: "click_cotiza",
+          link_url: linkUrl,
+          cta_text: ctaText,
+          page_location: pageLoc,
+        });
       }
     },
     false
